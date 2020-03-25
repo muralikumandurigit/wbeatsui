@@ -1,1 +1,85 @@
-<p>studentslist works!</p>
+<div style="padding: 50px;">
+    <mat-spinner *ngIf="students.length === 0"></mat-spinner>
+        <table mat-table [dataSource]="students" class="mat-elevation-z8">
+
+            <ng-container matColumnDef="student_id">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Student ID </th>
+                <td mat-cell *matCellDef="let element"> {{element.student_id}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="first_name">
+                <th mat-header-cell *matHeaderCellDef> First Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.first_name}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="middle_name">
+                <th mat-header-cell *matHeaderCellDef> Middle Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.middle_name}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="last_name">
+                <th mat-header-cell *matHeaderCellDef> Last Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.last_name}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="dob">
+                <th mat-header-cell *matHeaderCellDef> Date of Birth </th>
+                <td mat-cell *matCellDef="let element"> {{element.dob}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="father_name">
+                <th mat-header-cell *matHeaderCellDef> Father's Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.father_name}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="mother_name">
+                <th mat-header-cell *matHeaderCellDef> Mother's Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.mother_name}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="guardian_name">
+                <th mat-header-cell *matHeaderCellDef> Guardian's Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.guardian_name}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="start_date">
+                <th mat-header-cell *matHeaderCellDef> Start Date </th>
+                <td mat-cell *matCellDef="let element"> {{element.start_date}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="end_date">
+                <th mat-header-cell *matHeaderCellDef> End Date </th>
+                <td mat-cell *matCellDef="let element"> {{element.end_date}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="status_code">
+                <th mat-header-cell *matHeaderCellDef> Status Code </th>
+                <td mat-cell *matCellDef="let element"> {{element.status_code}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="comments">
+                <th mat-header-cell *matHeaderCellDef> Comments </th>
+                <td mat-cell *matCellDef="let element"> {{element.comments}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            <mat-paginator [length]="100"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 100]">
+            </mat-paginator>
+        </table>
+    
+<!--
+<mat-table [dataSource]="students" class="mat-elevation-z8" cdkDropListGroup>
+  <ng-container *ngFor="let student of students; let i = index" [matColumnDef]="student.field">
+    <mat-header-cell *matHeaderCellDef
+      (mousedown)="onResizeColumn($event, i)">
+      {{ student.field }}
+    </mat-header-cell>
+    <mat-cell *matCellDef="let row" > {{ row[student.field] }}  </mat-cell>
+  </ng-container>
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table> -->
+</div>
