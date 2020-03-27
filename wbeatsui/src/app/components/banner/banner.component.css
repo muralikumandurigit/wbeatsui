@@ -1,5 +1,7 @@
-  .toolbar {
-    position: absolute;
+
+
+
+ .toolbar {
     top: 0;
     left: 0;
     right: 0;
@@ -13,15 +15,13 @@
 
   .toolbar img {
     margin: 0 16px;
+    width: 200px;
+    height: 70px;
   }
 
-  .toolbar #twitter-logo {
-    height: 40px;
-    margin: 0 16px;
-  }
-
-  .toolbar #twitter-logo:hover {
-    opacity: 0.8;
+  .toolbar span {
+    font-size: x-large;
+    text-align: center;;
   }
 
   .spacer {

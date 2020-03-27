@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { StudentslistComponent } from './studentslist/studentslist.component';
+import { StudentslistComponent } from './components/studentslist/studentslist.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatButtonModule } from '@angular/material/button';
@@ -14,7 +14,9 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { BannerComponent } from './banner/banner.component';
+import { BannerComponent } from './components/banner/banner.component';
+import { StudentAdmissionComponent } from './components/student-admission/student-admission.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 
@@ -22,7 +24,9 @@ import { BannerComponent } from './banner/banner.component';
   declarations: [
     AppComponent,
     StudentslistComponent,
-    BannerComponent
+    BannerComponent,
+    StudentAdmissionComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
