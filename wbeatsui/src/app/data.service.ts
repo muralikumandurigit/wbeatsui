@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 
 export class DataService {
 
-  private REST_API_SERVER = "http://localhost:5000";
+  private REST_API_SERVER = environment.apiUrl;
 
   constructor(private httpClient : HttpClient) { }
 

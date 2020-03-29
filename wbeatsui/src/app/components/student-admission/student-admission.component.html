@@ -1,1 +1,82 @@
-<p>student-admission works!</p>
+<mat-grid-list cols="3" rowHeight="100px">
+   <mat-grid-tile>
+      <mat-form-field appearance="fill">
+         <mat-label>First Name</mat-label>
+         <input matInput>
+      </mat-form-field>
+   </mat-grid-tile>
+   <mat-grid-tile>
+      <mat-form-field appearance="fill">
+         <mat-label>Middle Name</mat-label>
+         <input matInput>
+      </mat-form-field>
+   </mat-grid-tile>
+   <mat-grid-tile>
+      <mat-form-field appearance="fill">
+         <mat-label>Last Name</mat-label>
+         <input matInput>
+      </mat-form-field>
+   </mat-grid-tile>
+   <mat-grid-tile>
+      <mat-form-field appearance="fill">
+         <mat-label>Date of Birth</mat-label>
+         <input matInput [matDatepicker]="myDatepicker" placeholder="Date of Birth" [formControl]="today">
+         <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+         <mat-datepicker #myDatepicker></mat-datepicker>
+      </mat-form-field>
+   </mat-grid-tile>
+   <mat-grid-tile>
+      <mat-form-field appearance="fill">
+         <mat-label>Father's Name</mat-label>
+         <input matInput>
+      </mat-form-field>
+   </mat-grid-tile>
+   <mat-grid-tile>
+      <mat-form-field appearance="fill">
+         <mat-label>Mother's Name</mat-label>
+         <input matInput>
+      </mat-form-field>
+   </mat-grid-tile>
+   <mat-grid-tile>
+      <mat-form-field appearance="fill">
+         <mat-label>Guardian's Name</mat-label>
+         <input matInput>
+      </mat-form-field>
+   </mat-grid-tile>
+   <mat-grid-tile>
+      <mat-form-field>
+         <mat-label>Address</mat-label>
+         <textarea matInput
+            cdkTextareaAutosize
+            #autosize="cdkTextareaAutosize"
+            cdkAutosizeMinRows="1"
+            cdkAutosizeMaxRows="5"></textarea>
+      </mat-form-field>
+   </mat-grid-tile>
+   <mat-grid-tile>
+      <mat-form-field>
+         <mat-label>Comments</mat-label>
+         <textarea matInput
+            cdkTextareaAutosize
+            #autosize="cdkTextareaAutosize"
+            cdkAutosizeMinRows="1"
+            cdkAutosizeMaxRows="5"></textarea>
+      </mat-form-field>
+   </mat-grid-tile>
+   <mat-grid-tile>
+      <mat-form-field appearance="fill">
+         <mat-label>Start Date</mat-label>
+         <input matInput [matDatepicker]="startDatepicker" placeholder="Start Date" [formControl]="today">
+         <mat-datepicker-toggle matSuffix [for]="startDatepicker"></mat-datepicker-toggle>
+         <mat-datepicker #startDatepicker></mat-datepicker>
+      </mat-form-field>
+   </mat-grid-tile>
+   <mat-grid-tile>
+      <mat-form-field appearance="fill">
+         <mat-label>End Date</mat-label>
+         <input matInput [matDatepicker]="endDatepicker" placeholder="End Date" [formControl]="today">
+         <mat-datepicker-toggle matSuffix [for]="endDatepicker"></mat-datepicker-toggle>
+         <mat-datepicker #endDatepicker></mat-datepicker>
+      </mat-form-field>
+   </mat-grid-tile>
+</mat-grid-list>

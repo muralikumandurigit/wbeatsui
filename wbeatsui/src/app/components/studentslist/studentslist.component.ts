@@ -18,7 +18,7 @@ export class StudentslistComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataService.sendGetRequest().subscribe((data : any[]) => {
-      console.log(data);
+ //     console.log(data);
       this.students = data;
     });
   }
