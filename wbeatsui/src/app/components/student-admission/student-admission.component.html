@@ -1,3 +1,6 @@
+<mat-toolbar id="toolbar">
+   <span>New Student Admission</span>
+</mat-toolbar>
 <div class="form-container">
    <mat-grid-list cols="3" rowHeight="100px">
       <mat-grid-tile>
@@ -16,6 +19,16 @@
          <mat-form-field appearance="fill">
             <mat-label>Last Name</mat-label>
             <input matInput>
+         </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+         <mat-form-field>
+            <mat-label>Gender</mat-label>
+            <mat-select>
+               <mat-option *ngFor="let gender of gender" [value]="gender.code">
+               {{ gender.description }}
+               </mat-option>
+            </mat-select>
          </mat-form-field>
       </mat-grid-tile>
       <mat-grid-tile>
