@@ -54,6 +54,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import { LoginComponent } from './components/login/login.component';
+import { InternalServerComponent } from './components/internal-server/internal-server.component';
 
 
 
@@ -64,7 +65,8 @@ import { LoginComponent } from './components/login/login.component';
     BannerComponent,
     StudentAdmissionComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    InternalServerComponent
   ],
 
   imports: [

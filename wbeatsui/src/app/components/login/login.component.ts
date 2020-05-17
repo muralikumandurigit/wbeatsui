@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../services/data/data.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-login',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dataService : DataService) { }
 
   ngOnInit(): void {
   }
@@ -16,6 +18,12 @@ export class LoginComponent implements OnInit {
 //	console.log(myform.value);
     console.log(myform.value.username);
     console.log(myform.value.password);
+
+    const formData = new FormData();
+    formData.set("uid", myform.value.username);
+    formData.append("passwd", myform.value.password);
+
+    this.dataService.sendPostRequest(environment.loginurl, formData);
   }
 
 }

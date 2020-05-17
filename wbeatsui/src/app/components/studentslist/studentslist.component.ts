@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../data.service';
+import { DataService } from '../../services/data/data.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-studentslist',
@@ -17,7 +18,7 @@ export class StudentslistComponent implements OnInit {
   constructor(private dataService : DataService) { }
 
   ngOnInit(): void {
-    this.dataService.sendGetRequest().subscribe((data : any[]) => {
+    this.dataService.sendGetRequest(environment.studentslisturl).subscribe((data : any[]) => {
  //     console.log(data);
       this.students = data;
     });
