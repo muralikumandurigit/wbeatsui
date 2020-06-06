@@ -23,7 +23,9 @@ export class LoginComponent implements OnInit {
     formData.set("uid", myform.value.username);
     formData.append("passwd", myform.value.password);
 
-    this.dataService.sendPostRequest(environment.loginurl, formData);
+    var response = this.dataService.sendPostRequest(environment.loginurl, {uid : myform.value.username,
+      passwd : myform.value.password});
+    console.log("MURALI: post response = <"+response+">");
   }
 
 }
