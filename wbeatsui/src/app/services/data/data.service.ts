@@ -16,7 +16,7 @@ export class DataService {
     return this.httpClient.get(this.REST_API_SERVER + url);
   }
 
-  public sendPostRequest(url : string, formData : any) {
+  public sendPostRequest(url : string, formData : any, callback) {
 	console.log("Sending post request: " + this.REST_API_SERVER + url);
 //    const headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded;');
 const httpOptions = {
@@ -27,8 +27,8 @@ const httpOptions = {
 
 	return this.httpClient.post(this.REST_API_SERVER + url, formData,  httpOptions
 	                     ).subscribe( {
-		next : data => console.log(data),
-		error : error => console.error('There was an error! ', error)
+		next : data => callback(data, null),
+		error : error => callback(null, error)
 	}
 	); 
 	

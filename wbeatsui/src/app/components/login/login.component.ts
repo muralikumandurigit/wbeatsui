@@ -1,31 +1,32 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../services/data/data.service';
-import { environment } from '../../../environments/environment';
+import { AuthserviceService } from '../../services/authservice/authservice.service';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+	selector: 'app-login',
+	templateUrl: './login.component.html',
+	styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private dataService : DataService) { }
+	constructor(private authService: AuthserviceService,
+		private router: Router) { }
 
-  ngOnInit(): void {
-  }
+	ngOnInit(): void { }
 
-  login(myform) {
-//	console.log(myform.value);
-    console.log(myform.value.username);
-    console.log(myform.value.password);
+	login(myform) {
+		console.log(myform.value.username);
+		console.log(myform.value.password);
 
-    const formData = new FormData();
-    formData.set("uid", myform.value.username);
-    formData.append("passwd", myform.value.password);
+		this.authService.authenticate(myform.value.username, myform.value.password, (data: any, error: any) => {
+			if(error==null) {
+				this.router.navigateByUrl('/home');
+			}
+			else {
+				this.router.navigateByUrl('/error');
+			}
+		});
 
-    var response = this.dataService.sendPostRequest(environment.loginurl, {uid : myform.value.username,
-      passwd : myform.value.password});
-    console.log("MURALI: post response = <"+response+">");
-  }
+	}
 
 }
