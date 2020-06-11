@@ -4,3 +4,8 @@ p{
     text-align: center;
     color: #c72d2d;
 }
+
+.mat-form-field-label,.mat-form-field-label.mat-focused,
+.mat-form-field.mat-focused.matform-field-should-float {
+    color: #c72d2d;
+}

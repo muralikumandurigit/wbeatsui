@@ -5,6 +5,7 @@ import { StudentslistComponent } from './components/studentslist/studentslist.co
 import { StudentAdmissionComponent } from './components/student-admission/student-admission.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { InternalServerComponent } from './components/internal-server/internal-server.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'studentslist', component: StudentslistComponent },
   { path: 'student/admission', component: StudentAdmissionComponent },
+  { path: 'InternalServerComponent', component: InternalServerComponent },
   { path: '**', component: HomeComponent } // If no matching route found, go back to home route
 ];
 

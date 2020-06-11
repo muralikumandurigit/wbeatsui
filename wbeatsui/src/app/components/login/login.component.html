@@ -16,6 +16,11 @@
       <mat-grid-tile>
          <button mat-raised-button type="submit">Login</button>
       </mat-grid-tile>
+      <mat-grid-tile>
+      <div *ngIf="isLoginFailed">
+         <mat-label>Login Failed!!!</mat-label>
+      </div>
+     </mat-grid-tile>
    </form>
  </mat-grid-list>
 </div>

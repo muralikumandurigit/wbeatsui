@@ -6,7 +6,8 @@ export const environment = {
   production: false,
   apiUrl: 'http://localhost:5000',
   studentslisturl: '/school/students',
-  loginurl: '/login'
+  loginurl: '/login',
+  validateToken: '/validateToken'
 };
 
 /*

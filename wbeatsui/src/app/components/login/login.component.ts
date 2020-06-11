@@ -12,6 +12,8 @@ export class LoginComponent implements OnInit {
 	constructor(private authService: AuthserviceService,
 		private router: Router) { }
 
+    public isLoginFailed: boolean = false;
+
 	ngOnInit(): void { }
 
 	login(myform) {
@@ -20,13 +22,14 @@ export class LoginComponent implements OnInit {
 
 		this.authService.authenticate(myform.value.username, myform.value.password, (data: any, error: any) => {
 			if(error==null) {
+				this.isLoginFailed = false;
 				this.router.navigateByUrl('/home');
 			}
 			else {
-				this.router.navigateByUrl('/error');
+				this.isLoginFailed = true;
+				this.router.navigateByUrl('/login');
 			}
 		});
 
 	}
-
 }

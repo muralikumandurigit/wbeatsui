@@ -9,10 +9,9 @@ export class AuthserviceService {
 
 	private _currentUser: string;
 
+	private _accessTokenKey: string = 'access_token';
+
 	constructor(private dataService: DataService) { }
-
-	private _token: string;
-
 
 	public set currentUser(value) {
 		this._currentUser = value;
@@ -26,12 +25,34 @@ export class AuthserviceService {
 			uid: uid,
 			passwd: passwd
 		}, (data, error) => {
-			if(error == null) {
+			if (error == null) {
 				this._currentUser = uid;
 				console.log('Token = ' + data.token);
-				localStorage.setItem('access_token', data);
+				localStorage.setItem(this._accessTokenKey, data);
 			}
 			callback(data, error);
 		});
+	}
+
+	public isValidToken(callback) {
+		const token = localStorage.getItem(this._accessTokenKey);
+		console.log('From isValidToken');
+		if (token == null) {
+			console.log('From isValidToken: no token present');
+			callback(false);
+		}
+		else {
+			this.dataService.sendPostRequest(environment.validateToken, {}, (_data: any, _error: any) => {
+				if (_error == null) {
+					console.log('From isValidToken: valid token');
+					callback(true);
+				}
+				else {
+					console.log('From isValidToken: invalid/expired token');
+					localStorage.removeItem(this._accessTokenKey);
+					callback(false);
+				}
+			});
+		}
 	}
 }
