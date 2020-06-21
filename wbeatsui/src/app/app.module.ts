@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -55,7 +55,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import { LoginComponent } from './components/login/login.component';
 import { InternalServerComponent } from './components/internal-server/internal-server.component';
-
+import { InterceptorService } from './services/interceptor/interceptor.service';
 
 
 @NgModule({
@@ -120,7 +120,13 @@ import { InternalServerComponent } from './components/internal-server/internal-s
     PortalModule,
     ScrollingModule
   ],
-  providers: [],
+  providers: [
+	    {
+    provide: HTTP_INTERCEPTORS,
+    useClass: InterceptorService,
+    multi: true
+    }
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

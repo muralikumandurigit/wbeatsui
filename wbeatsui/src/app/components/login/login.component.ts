@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthserviceService } from '../../services/authservice/authservice.service';
-import { Router } from '@angular/router';
+import { RouterService } from '../../services/router/router.service';
 
 @Component({
 	selector: 'app-login',
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
 	constructor(private authService: AuthserviceService,
-		private router: Router) { }
+		private router: RouterService) { }
 
     public isLoginFailed: boolean = false;
 
@@ -23,11 +23,11 @@ export class LoginComponent implements OnInit {
 		this.authService.authenticate(myform.value.username, myform.value.password, (data: any, error: any) => {
 			if(error==null) {
 				this.isLoginFailed = false;
-				this.router.navigateByUrl('/home');
+				this.router.redirectToHome();
 			}
 			else {
 				this.isLoginFailed = true;
-				this.router.navigateByUrl('/login');
+				this.router.redirectToLogin();
 			}
 		});
 

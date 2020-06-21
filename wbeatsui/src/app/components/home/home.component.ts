@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
 
   async isLoggedIn() {
 	console.log('From isValidToken');
-	this.authService.isValidToken((isValidToken : any) => {
+	this.authService.isTokenExpired((isValidToken : any) => {
 		console.log('From isValidToken: isValidToken = ' + isValidToken);
 		if (!isValidToken) {
 			console.log('From isValidToken: invalid/expired token. redirecting to login');
