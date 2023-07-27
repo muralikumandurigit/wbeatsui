@@ -1,0 +1,9 @@
+.banner
+{
+  background-color:lightblue
+}
+
+.row img {
+    height: 70px;
+    cursor: pointer;
+}
