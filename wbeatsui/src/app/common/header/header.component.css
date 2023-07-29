@@ -1,9 +1,32 @@
 .banner
 {
-  background-color:lightblue
+  background-color:lightblue;
+  height: 70px;
 }
 
-.row img {
+.banner img {
     height: 70px;
     cursor: pointer;
+    display: inline-block;
+}
+
+.menu {
+  float:right;
+  position: sticky;
+  margin-top: 25px;
+
+}
+
+.nav-item {
+  display: inline;
+  padding: 10px 10px;
+  font-size: 20px;
+  background-color: rgb(151, 151, 232);
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.nav-item :hover {
+  background-color: black;
 }
