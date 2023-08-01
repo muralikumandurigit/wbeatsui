@@ -8,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class ImageScrollComponent implements OnInit {
   images: string[] = [
     'assets/bgimage.jpg',
-    'assets/wbeats.jpg'
+    'assets/wbeats.jpg',
+    'assets/image3.jpg',
+    'assets/image4.jpg',
+    'assets/image5.jpg',
+    'assets/image6.jpg'
     // Add more image URLs here
   ];
 
