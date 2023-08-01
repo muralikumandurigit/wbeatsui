@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./careers.component.css']
 })
 export class CareersComponent {
+  isCollapsed: boolean = true;
+  constructor() { }
 
+  ngOnInit(): void {
+  }
+
+  toggleNavbar(): void {
+    this.isCollapsed = !this.isCollapsed;
+  }
 }

@@ -1,0 +1,33 @@
+.image-container {
+    overflow: hidden;
+    width: auto;
+    height: auto; /* Set the desired height of the scrolling container */
+  }
+  
+  .scroll-wrapper {
+    display: flex;
+    animation: scroll 20s linear infinite; /* Adjust the animation duration as per your preference */
+  }
+  
+  .image-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  
+  img {
+    width: 100%; /* Ensure the images take up the full width of the container */
+    height: auto; /* Maintain the aspect ratio of the images */
+    margin-right: 20px; /* Adjust the spacing between images */
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%); /* Adjust this value based on the number of images and spacing */
+    }
+  }
+  

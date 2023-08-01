@@ -1,1 +1,17 @@
-<p>careers works!</p>
+<nav class="navbar">
+    <div class="nav-header">
+      <button class="toggle-button" (click)="toggleNavbar()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="logo">Your Logo</div>
+    </div>
+    <ul class="nav-links" [ngClass]="{ 'collapsed': isCollapsed }">
+      <!-- Add your navigation links here -->
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/about">About</a></li>
+      <li><a routerLink="/contact">Contact</a></li>
+    </ul>
+  </nav>
+  

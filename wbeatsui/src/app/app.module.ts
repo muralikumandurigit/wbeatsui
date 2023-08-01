@@ -11,6 +11,7 @@ import { ProgramsComponent } from './pages/programs/programs.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { AdmissionsComponent } from './pages/admissions/admissions.component';
 import { CareersComponent } from './pages/careers/careers.component';
+import { ImageScrollComponent } from './common/image-scroll/image-scroll.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CareersComponent } from './pages/careers/careers.component';
     ProgramsComponent,
     ContactComponent,
     AdmissionsComponent,
-    CareersComponent
+    CareersComponent,
+    ImageScrollComponent
   ],
   imports: [
     BrowserModule,
