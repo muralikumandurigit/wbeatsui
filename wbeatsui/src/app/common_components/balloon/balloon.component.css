@@ -1,0 +1,20 @@
+.balloon {
+    position: absolute;
+    width: 50px;
+    height: 70px;
+    background-color: #ff9999;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    text-align: center;
+    cursor: pointer;
+    animation: floatAnimation 2s infinite alternate;
+  }
+  
+  @keyframes floatAnimation {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-20px);
+    }
+  }
+  

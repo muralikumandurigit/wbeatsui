@@ -1,7 +1,7 @@
 .image-container {
-    overflow: scroll;
+    overflow: hidden;
     width: auto;
-    height: auto; /* Set the desired height of the scrolling container */
+    height: 230px; /* Set the desired height of the scrolling container */
   }
   
   .scroll-wrapper {

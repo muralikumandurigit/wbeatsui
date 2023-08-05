@@ -1,0 +1,31 @@
+
+.circle {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    animation: moveUpDown 2s infinite alternate;
+    margin-left: 50px;
+    margin-right: 50px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease; /* Add smooth transition */
+    border: none;
+    font-weight: bold;
+    border-radius: 50%;
+  }
+  
+  @keyframes moveUpDown {
+    0% {
+      top: 0;
+    }
+    100% {
+      top: 20px; /* Adjust the height to control the up and down motion */
+    }
+  }
+
+  .container :hover{
+    width: 130px; /* Size when hovering */
+    height: 130px; /* Size when hovering */
+  }
