@@ -1,6 +1,6 @@
 .circle-image {
-    width: 400px; /* You can adjust the size according to your preference */
-    height: 400px;
+    width: 350px; /* You can adjust the size according to your preference */
+    height: 350px ;
     border-radius: 50%; /* This makes the element circular */
     overflow: hidden; /* This hides any part of the image outside the circle */
     background-color: lightblue;
@@ -19,7 +19,7 @@ app-moving-circle {
 }
   
 .circle-image img {
-    height: 200px;
+    height: 50%;
     display: inline-block;
     justify-content: center;
 }
@@ -28,4 +28,10 @@ app-moving-circle {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+.left-announcements, .right-announcements {
+    margin-top: 4%;
+    background-color: gray;
+    height: 250px;
+    width: 17%;
 }

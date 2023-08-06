@@ -1,6 +1,13 @@
-.row
+.container
 {
     background-color: black;
     font-size: large;
     color: white;
+    display: flex;
+}
+
+.icon {
+    height: 30px;
+    cursor: pointer;
+    display: inline-block;
 }
