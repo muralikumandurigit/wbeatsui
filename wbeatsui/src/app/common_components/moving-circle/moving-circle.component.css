@@ -25,7 +25,11 @@
     }
   }
 
-  .container :hover{
+  .w3-container :hover{
     width: 130px; /* Size when hovering */
     height: 130px; /* Size when hovering */
+  }
+
+  .powered .w3-bar {
+    float: right;
   }

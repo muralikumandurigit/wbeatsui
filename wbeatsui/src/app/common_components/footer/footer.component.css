@@ -1,13 +1,10 @@
-.container
-{
-    background-color: black;
-    font-size: large;
-    color: white;
-    display: flex;
+
+img {
+    height: 30px;
+    display: inline-block;
 }
 
-.icon {
-    height: 30px;
-    cursor: pointer;
-    display: inline-block;
+.kreedo {
+    position: sticky;
+    float: right;
 }
